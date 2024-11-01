@@ -1,13 +1,17 @@
 # Дано двузначное число. Вывести число, полученное при
 # перестановке цифр исходного числа.
-# Ввод двузначного числа
+# Ввод
 while True:
     try:
-        number = int(input("Введите двузначное число:"))
-        if len(number) == 2 and number.isdigit():
-            str_number = str(number)
-            swapped_number = str_number[1] + str_number[0]
-            print(swapped_number)
-        break
+        number = int(input("Введите двузначное число: "))
+        
+        # Проверка, является ли число двузначным
+        if 10 <= number <= 99:
+            # Меняем местами десятки и единицы
+            swapped_number = (number % 10) * 10 + (number // 10)
+            print(f"Число после перестановки: {swapped_number}")
+            break  # Выходим из цикла, если все хорошо
+        else:
+            print("Пожалуйста, введите двузначное число!")  # Если не двузначное число
     except ValueError:
-        print("Введите двузначное число!")    
+        print("Введите корректное число!")  # Обработка некорректного ввода
