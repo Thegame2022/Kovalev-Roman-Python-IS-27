@@ -1,14 +1,13 @@
 # Дано двузначное число. Вывести число, полученное при
 # перестановке цифр исходного числа.
 # Ввод двузначного числа
-number = input("Введите двузначное число: ")
-
-# Проверка, что введено именно двузначное число
-if len(number) == 2 and number.isdigit():
-    # Перестанвка цифр
-    swapped_number = number[1] + number[0]
-
-    # Вывод результата
-    print("Число после перестановки цифр:", swapped_number)
-else:
-    print("Ошибка: Введите корректное двузначное число.")
+while True:
+    try:
+        number = int(input("Введите двузначное число:"))
+        if len(number) == 2 and number.isdigit():
+            str_number = str(number)
+            swapped_number = str_number[1] + str_number[0]
+            print(swapped_number)
+        break
+    except ValueError:
+        print("Введите двузначное число!")    
