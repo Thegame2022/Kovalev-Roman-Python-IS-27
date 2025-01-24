@@ -13,7 +13,7 @@ ruan = {
 }
 while True:
     enter = input("Введите русское слово для перевода: ").strip().lower()
-    if user_input == 'e':
+    if enter == 'e':
         break
     if enter in ruan:
         translate = ruan[enter]
