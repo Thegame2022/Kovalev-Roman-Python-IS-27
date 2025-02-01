@@ -10,11 +10,11 @@ ruan = {
     "компьютер": "computer",
     "человек": "human",
     "город": "city"
-}
-while True:
-    enter = input("Введите русское слово для перевода: ").strip().lower()
-    if enter == 'e':
-        break
+} #Словарь русско-английских слов
+while True: #Цикл для ввода пользователем слов для перевода
+    enter = input("Введите русское слово для перевода: ").strip().lower() #Ввод пользователем слова
+    if enter == 'e': #Ввод e для остановки цикла
+        break #Остановка цикла
     if enter in ruan:
         translate = ruan[enter]
         print(f"Перевод слова {enter} - {translate}")
