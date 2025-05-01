@@ -6,5 +6,5 @@ kd = int(input("Введите число:"))
 kp = lambda seq, k: k in seq
 #Применение функции
 proverka = kp(numbers, kd)
-#Вывод результата в консоль
+#Вывд результата в консоль
 print(f"Число {kd} присутствует: {proverka}")
