@@ -1,6 +1,7 @@
 #1.Проверить есть ли в последовательности целых N чисел число K
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-kd = 0
+import random
+numbers = [random.randint(1, 100) for _ in range(10)]
+kd = int(input("Введите число:"))
 #Функция проверяющая наличие k
 kp = lambda seq, k: k in seq
 #Применение функции
