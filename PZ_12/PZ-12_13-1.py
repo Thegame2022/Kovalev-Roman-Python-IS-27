@@ -2,6 +2,7 @@
 import random
 numbers = [random.randint(1, 100) for _ in range(10)]
 kd = int(input("Введите число:"))
+print(numbers)
 #Функция проверяющая наличие k
 kp = lambda seq, k: k in seq
 #Применение функции
