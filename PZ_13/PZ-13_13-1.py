@@ -1,14 +1,11 @@
+#1. Для каждой строки матрицы с нечетным номером найти среднее арифметическое ее
+#элементов.
 from functools import reduce
-#Вычисление среднего арифметического
-sz = lambda lst: sum(lst) / len(lst)
-#Ввод строк матрицы
-def input_matrix():
-    return[list(map(int, input(f"Строка {i+1}: ").split())) for i in range(int(input("Количество строк: ")))]
-#Рассчет среднего арифметического для нечетных строк
-def odd_rows(matrix):
-    return list(map(lambda row: sz(row[1]), filter(lambda row: row[0] % 2 == 1,enumerate(matrix, 1))))
-#Проверка кода на запуск напрямую
+import random
 if __name__ == "__main__":
-    #Ввод матрицы
-    matrix = input_matrix()
-    print("Средние значения нечетных строк: ", odd_rows(matrix))
+    rows = min(int(input("Количество строк: ")), 10)
+    generated_strings = [[random.randint(1, 100) for _ in range(random.randint(1, 10))]for _ in range(rows)]
+    print("\nСгенерированные строки:")
+    list(map(lambda i_str: print(f"Строка {i_str[0] + 1}: {', '.join(map(str, i_str[1]))}"),enumerate(generated_strings)))
+    averages = list(map(lambda s: reduce(lambda a, b: a + b, s) / len(s),map(lambda i_str: i_str[1],filter(lambda i_str: (i_str[0] + 1) % 2 == 1,enumerate(generated_strings)))))
+    print("\nСреднее значение нечетных строк:", averages)
