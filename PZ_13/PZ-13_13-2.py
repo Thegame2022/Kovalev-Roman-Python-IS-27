@@ -1,8 +1,12 @@
-#2. В двумерном списке найти максимальный положительный элемент, кратный 4.
-from itertools import chain
-from random import randint
-matrix = [[randint(-50, 50) for _ in range(3)] for _ in range(3)]
-print("Сгенерированная матрица:")
-print('\n'.join(' '.join(f"{num:3}" for num in row) for row in matrix))
-result = (max(filter(lambda x: x > 0 and x % 4 == 0,chain.from_iterable(matrix))) if any(x > 0 and x % 4 == 0 for row in matrix for x in row) else None)
-print("\nМаксимальный положительный элемент кратный 4:", result)
+#В двумерном списке найти максимальный положительный элемент, кратный 4
+import random
+#Ввод количества строк
+n = int(input("Введите количество строк: "))
+#Матрица созданная через random
+matrix = list(map(lambda _: list(map(lambda _: random.randint(-100, 100), range(3))), range(n)))
+#Фильтрация по условию положительно,кратно 4
+filtered = list(filter(lambda x: x > 0 and x % 4 == 0, sum(matrix, [])))
+#Вывод матрицы
+print(matrix)
+#Вывод максимального значения после фильтрации
+print(max(filtered) if filtered else None)
