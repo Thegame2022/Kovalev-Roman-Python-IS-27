@@ -18,7 +18,7 @@ try:
     collision_sound = Audio('assets/collision.wav', autoplay=False, loop=False)
     background_music = Audio('assets/background_music.wav', autoplay=True, loop=True)
     game_over_sound = Audio('assets/game_over.wav', autoplay=False, loop=False)
-    bonus_sound = Audio('assets/bonus.wav', autoplay=False, loop=False)
+    bonus_sound = Audio('assets/bonus.mp3', autoplay=False, loop=False)
     background_music.volume = 0.5
     collision_sound.volume = 0.7
     game_over_sound.volume = 0.8
