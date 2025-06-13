@@ -1,10 +1,10 @@
 import sqlite3
 
-# Подключение к базе
+#Подключение к базе
 conn = sqlite3.connect('sklad.db')
 c = conn.cursor()
 
-# Создаем таблицу, если её нет
+#Cоздаем таблицу, если её нет
 c.execute('''CREATE TABLE IF NOT EXISTS tovari ( kod INTEGER PRIMARY KEY, marka TEXT, tip TEXT, cena REAL, kolvo INTEGER, min_zapas INTEGER)''')
 conn.commit()
 
@@ -111,7 +111,7 @@ def spisok():
         status = "Мало!" if t[4] < t[5] else ""
         print(f"{t[0]}. {t[1]} ({t[2]}): {t[4]} шт., цена: {t[3]}₽ {status}")
 
-# Меню программы
+#Меню программы
 while True:
     print("\n" + "="*30)
     print(" Управление складом")
